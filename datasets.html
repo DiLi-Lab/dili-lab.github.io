@@ -893,7 +893,13 @@
                     th.setAttribute('title', COLUMN_DESCRIPTIONS[col]);
                 }
 
-                th.innerHTML = `${col} <span class="sort-indicator">⇅</span>`;
+                let colText = col;
+                // Add link for pymovements column
+                if (col === 'pymovements') {
+                    colText = `pymovements <a href="https://github.com/pymovements/pymovements" target="_blank" rel="noopener" style="display: inline; margin-left: 4px; color: #3498db; text-decoration: none; font-size: 1.1em;" title="Visit pymovements GitHub">🔗</a>`;
+                }
+
+                th.innerHTML = `${colText} <span class="sort-indicator">⇅</span>`;
                 th.style.cursor = 'pointer';
                 th.onclick = () => sortTable(col);
                 headerRow.appendChild(th);
