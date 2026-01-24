@@ -893,8 +893,7 @@
                     th.setAttribute('title', COLUMN_DESCRIPTIONS[col]);
                 }
 
-                const badge = `<span class="type-badge type-${type}">${type}</span>`;
-                th.innerHTML = `${col} ${badge}<span class="sort-indicator">⇅</span>`;
+                th.innerHTML = `${col} <span class="sort-indicator">⇅</span>`;
                 th.style.cursor = 'pointer';
                 th.onclick = () => sortTable(col);
                 headerRow.appendChild(th);
